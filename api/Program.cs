@@ -1,3 +1,4 @@
+using data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(oBuilder =>
     oBuilder.UseSqlServer("Server=localhost;Database=Company_attendance;User Id=tnt;Password=1;encrypt=false;"));
-
+builder.Services.AddScoped<EmployeeRepository>();
+builder.Services.AddScoped<AttendanceRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
