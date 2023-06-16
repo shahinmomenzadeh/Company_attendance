@@ -36,13 +36,22 @@ public class AttendanceController : ControllerBase
             return Ok(attendanceDto);
         }
 
+        // [HttpPost]
+        // public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
+        // {
+        //     var attendance = _mapper.Map<Attendance>(attendanceDto);
+        //     await _attendanceRepository.Add(attendance);
+        //     return Ok(_mapper.Map<AttendanceDto>(attendance));
+        // }
         [HttpPost]
         public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
         {
             var attendance = _mapper.Map<Attendance>(attendanceDto);
+            ReflectionHelper.SetPropertyValue(attendance, "EmployeeId", 1);
             await _attendanceRepository.Add(attendance);
             return Ok(_mapper.Map<AttendanceDto>(attendance));
         }
+
 
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, AttendanceDto attendanceDto)
@@ -72,4 +81,5 @@ public class AttendanceController : ControllerBase
             await _attendanceRepository.Delete(id);
             return NoContent();
         }
+        
     }
