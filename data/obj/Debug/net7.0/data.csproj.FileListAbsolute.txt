@@ -1,0 +1,17 @@
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\data.deps.json
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\data.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\data.pdb
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.csproj.AssemblyReference.cache
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.AssemblyInfoInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.AssemblyInfo.cs
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.csproj.CoreCompileInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.csproj.CopyComplete
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\refint\data.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.pdb
+C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\ref\data.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity1.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity1.pdb
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity.pdb
