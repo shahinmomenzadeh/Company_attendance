@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using api.DTO;
+using data.Repository;
+using Entity1;
 
 namespace api.Controllers
 {
@@ -9,10 +12,10 @@ namespace api.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
-        private readonly EmployeeRepository _employeeRepository;
+        private readonly IBaseRepository<Employee> _employeeRepository;
         private readonly IMapper _mapper;
 
-        public EmployeeController(EmployeeRepository employeeRepository, IMapper mapper)
+        public EmployeeController(IBaseRepository<Employee> employeeRepository, IMapper mapper)
         {
             _employeeRepository = employeeRepository;
             _mapper = mapper;

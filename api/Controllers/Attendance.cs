@@ -1,6 +1,10 @@
 ﻿
+using api.DTO;
+using api.Reflection;
 using AutoMapper;
+using data.Repository;
 using Microsoft.AspNetCore.Mvc;
+using model;
 
 namespace api.Controllers;
 
@@ -8,10 +12,10 @@ namespace api.Controllers;
 [Route("api/[controller]")]
 public class AttendanceController : ControllerBase
 {
-    private readonly AttendanceRepository _attendanceRepository;
+    private readonly IBaseRepository<Attendance> _attendanceRepository;
     private readonly IMapper _mapper;
     
-    public AttendanceController(AttendanceRepository attendanceRepository, IMapper mapper)
+    public AttendanceController(IBaseRepository<Attendance> attendanceRepository, IMapper mapper)
     {
         _attendanceRepository = attendanceRepository;
         _mapper = mapper;
@@ -36,21 +40,21 @@ public class AttendanceController : ControllerBase
             return Ok(attendanceDto);
         }
 
-        // [HttpPost]
-        // public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
-        // {
-        //     var attendance = _mapper.Map<Attendance>(attendanceDto);
-        //     await _attendanceRepository.Add(attendance);
-        //     return Ok(_mapper.Map<AttendanceDto>(attendance));
-        // }
         [HttpPost]
         public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
         {
             var attendance = _mapper.Map<Attendance>(attendanceDto);
-            ReflectionHelper.SetPropertyValue(attendance, "EmployeeId", 1);
             await _attendanceRepository.Add(attendance);
             return Ok(_mapper.Map<AttendanceDto>(attendance));
         }
+        // [HttpPost]
+        // public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
+        // {
+        //     var attendance = _mapper.Map<Attendance>(attendanceDto);
+        //     ReflectionHelper.SetPropertyValue(attendance,"EmployeeId", 1);
+        //     await _attendanceRepository.Add(attendance);
+        //     return Ok(_mapper.Map<AttendanceDto>(attendance));
+        // }
 
 
         [HttpPut("{id}")]

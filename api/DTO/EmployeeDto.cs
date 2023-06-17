@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿namespace api.DTO;
+
 public class EmployeeDto
 {
     public int Id { get; set; }

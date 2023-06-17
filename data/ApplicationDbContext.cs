@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entity1;
+using Microsoft.EntityFrameworkCore;
+using model;
+
+namespace data;
 
 public class ApplicationDbContext : DbContext
 {
@@ -8,9 +12,4 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Attendance> Attendances { get; set; }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-        //inja
-    }
 }

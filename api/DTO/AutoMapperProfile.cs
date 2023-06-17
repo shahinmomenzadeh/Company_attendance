@@ -1,4 +1,8 @@
 ﻿using AutoMapper;
+using Entity1;
+using model;
+
+namespace api.DTO;
 
 public class AutoMapperProfile : Profile
 {

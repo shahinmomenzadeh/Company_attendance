@@ -102,6 +102,59 @@
         }
       }
     },
+    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj",
+        "projectName": "BaseEntity",
+        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj",
+        "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -124,11 +177,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\Entity1.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\Entity1.csproj"
-              },
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj"
+              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj": {
+                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj"
               }
             }
           }
@@ -156,122 +206,6 @@
               "version": "[8.0.0-preview.4.23259.3, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\Entity1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\Entity1.csproj",
-        "projectName": "Entity1",
-        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\Entity1.csproj",
-        "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity1\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj",
-        "projectName": "Entity",
-        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",

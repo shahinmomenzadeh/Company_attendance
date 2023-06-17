@@ -1,4 +1,6 @@
-﻿public interface IBaseEntity
+﻿namespace model;
+
+public interface IBaseEntity
 {
     int Id { get; set; }
 }

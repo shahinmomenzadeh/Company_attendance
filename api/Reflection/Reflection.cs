@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 
+namespace api.Reflection;
+
 public static class ReflectionHelper
 {
     public static PropertyInfo[] GetProperties(object obj)

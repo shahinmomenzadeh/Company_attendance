@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj",
-      "projectName": "Entity",
-      "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj",
+      "projectName": "BaseEntity",
+      "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\BaseEntity.csproj",
       "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\BaseEntity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
