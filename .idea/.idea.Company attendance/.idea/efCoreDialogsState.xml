@@ -4,7 +4,7 @@
     <option name="keyValueStorage">
       <map>
         <entry key="Common:buildConfiguration" value="Debug" />
-        <entry key="Common:d27da9f6-c356-4f0d-8f98-d363954bacb5:dbContext" value="ApplicationDbContext" />
+        <entry key="Common:d27da9f6-c356-4f0d-8f98-d363954bacb5:dbContext" value="data.ApplicationDbContext" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:outputFolder" value="Migrations" />
         <entry key="Common:useDefaultConnection" value="true" />

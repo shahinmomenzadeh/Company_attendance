@@ -2,14 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using model;
 
-namespace data;
-
-public class ApplicationDbContext : DbContext
+namespace data
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    public class ApplicationDbContext : DbContext
     {
-    }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
 
-    public DbSet<Employee> Employees { get; set; }
-    public DbSet<Attendance> Attendances { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>();
+            modelBuilder.Entity<Attendance>();
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
 }

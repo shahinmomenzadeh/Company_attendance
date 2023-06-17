@@ -90,7 +90,5 @@ C:\Users\shahin\RiderProjects\Company attendance\api\obj\Debug\net7.0\api.genrun
 C:\Users\shahin\RiderProjects\Company attendance\api\obj\Debug\net7.0\ref\api.dll
 C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\Entity.dll
-C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\Entity1.dll
-C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\Entity.pdb
-C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\Entity1.pdb
+C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\BaseEntity.dll
+C:\Users\shahin\RiderProjects\Company attendance\api\bin\Debug\net7.0\BaseEntity.pdb

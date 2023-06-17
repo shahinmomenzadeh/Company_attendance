@@ -1,0 +1,12 @@
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\bin\Debug\net7.0\BaseEntity.deps.json
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\bin\Debug\net7.0\BaseEntity.dll
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\bin\Debug\net7.0\BaseEntity.pdb
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.csproj.AssemblyReference.cache
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.AssemblyInfoInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.AssemblyInfo.cs
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.csproj.CoreCompileInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.dll
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\refint\BaseEntity.dll
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\BaseEntity.pdb
+C:\Users\shahin\RiderProjects\Company attendance\BaseEntity\obj\Debug\net7.0\ref\BaseEntity.dll
