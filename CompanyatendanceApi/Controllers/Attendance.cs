@@ -1,10 +1,6 @@
-﻿
-using api.DTO;
-using api.Reflection;
-using AutoMapper;
-using data.Repository;
+﻿using api.DTO;
 using Microsoft.AspNetCore.Mvc;
-using model;
+
 
 namespace api.Controllers;
 
@@ -12,78 +8,66 @@ namespace api.Controllers;
 [Route("CompanyatendanceApi/[controller]")]
 public class AttendanceController : ControllerBase
 {
-    private readonly IBaseRepository<Attendance> _attendanceRepository;
-    private readonly IMapper _mapper;
-    
-    public AttendanceController(IBaseRepository<Attendance> attendanceRepository, IMapper mapper)
+    private readonly IAttendanceService _attendanceService;
+
+    public AttendanceController(IAttendanceService attendanceService)
     {
-        _attendanceRepository = attendanceRepository;
-        _mapper = mapper;
+        _attendanceService = attendanceService;
     }
- [HttpGet]
-        public async Task<ActionResult<List<AttendanceDto>>> GetAll()
+
+    [HttpGet]
+    public async Task<ActionResult<List<AttendanceDto>>> GetAllAttendances()
+    {
+        var attendances = await _attendanceService.GetAllAttendances();
+        return Ok(attendances);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<AttendanceDto>> GetAttendanceById(int id)
+    {
+        var attendance = await _attendanceService.GetAttendanceById(id);
+        if (attendance == null)
         {
-            var attendances = await _attendanceRepository.GetAll();
-            var attendanceDtos = _mapper.Map<List<AttendanceDto>>(attendances);
-            return Ok(attendanceDtos);
+            return NotFound();
         }
+        return Ok(attendance);
+    }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AttendanceDto>> GetById(int id)
+    [HttpPost]
+    public async Task<ActionResult<AttendanceDto>> AddAttendance(AttendanceDto attendanceDto)
+    {
+        var attendance = await _attendanceService.AddAttendance(attendanceDto);
+        return Ok(attendance);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateAttendance(int id, AttendanceDto attendanceDto)
+    {
+        try
         {
-            var attendances = await _attendanceRepository.GetById(id);
-            if (attendances == null)
-            {
-                return NotFound();
-            }
-            var attendanceDto = _mapper.Map<AttendanceDto>(attendances);
-            return Ok(attendanceDto);
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
-        {
-            var attendance = _mapper.Map<Attendance>(attendanceDto);
-            await _attendanceRepository.Add(attendance);
-            return Ok(_mapper.Map<AttendanceDto>(attendance));
-        }
-        // [HttpPost]
-        // public async Task<ActionResult<AttendanceDto>> Add(AttendanceDto attendanceDto)
-        // {
-        //     var attendance = _mapper.Map<Attendance>(attendanceDto);
-        //     ReflectionHelper.SetPropertyValue(attendance,"EmployeeId", 1);
-        //     await _attendanceRepository.Add(attendance);
-        //     return Ok(_mapper.Map<AttendanceDto>(attendance));
-        // }
-
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, AttendanceDto attendanceDto)
-        {
-            if (id != attendanceDto.Id)
-            {
-                return BadRequest();
-            }
-            var existingAttendance = await _attendanceRepository.GetById(id);
-            if (existingAttendance == null)
-            {
-                return NotFound();
-            }
-            _mapper.Map(attendanceDto,existingAttendance);
-            await _attendanceRepository.Update(existingAttendance);
+            await _attendanceService.UpdateAttendance(id, attendanceDto);
             return NoContent();
         }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        catch (Exception ex)
         {
-            var existingAttendance = await _attendanceRepository.GetById(id);
-            if (existingAttendance == null)
-            {
-                return NotFound();
-            }
-            await _attendanceRepository.Delete(id);
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteAttendance(int id)
+    {
+        try
+        {
+            await _attendanceService.DeleteAttendance(id);
             return NoContent();
         }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    
         
     }

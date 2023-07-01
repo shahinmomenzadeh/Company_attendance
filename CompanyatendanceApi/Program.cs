@@ -1,6 +1,5 @@
 using System.Reflection;
 using api.DTO;
-using api.Reflection;
 using data;
 using data.Repository;
 using Entity1;
@@ -17,7 +16,6 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -27,6 +25,9 @@ builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<IBaseRepository<Employee>, BaseRepository<Employee>>();
 builder.Services.AddScoped<IBaseRepository<Attendance>, BaseRepository<Attendance>>();
 
+// Add attendance service to the container
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,11 +41,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// Add attendance controller with attendance service dependency injection
 app.MapControllers();
 
 app.Run();
-var className = "Attendance";
-var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-var type = Type.GetType($"{assemblyName}.Models.{className}");
-var obj = Activator.CreateInstance(type);
-ReflectionHelper.SetPropertyValue(obj, "EmployeeId", 1);

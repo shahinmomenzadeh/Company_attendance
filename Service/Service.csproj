@@ -4,10 +4,11 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Service_</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Entity\Entity.csproj" />
+      <ProjectReference Include="..\data\data.csproj" />
     </ItemGroup>
 
     <ItemGroup>
