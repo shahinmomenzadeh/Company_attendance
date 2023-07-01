@@ -11,5 +11,7 @@ C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.dll
 C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\refint\data.dll
 C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\data.pdb
 C:\Users\shahin\RiderProjects\Company attendance\data\obj\Debug\net7.0\ref\data.dll
-C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\BaseEntity.dll
-C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\BaseEntity.pdb
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\Entity.pdb
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\common.dll
+C:\Users\shahin\RiderProjects\Company attendance\data\bin\Debug\net7.0\common.pdb

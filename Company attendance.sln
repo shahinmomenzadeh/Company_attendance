@@ -1,10 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseEntity", "BaseEntity\BaseEntity.csproj", "{D1EBF9B7-8754-43EB-81CE-F18DF0543D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{D1EBF9B7-8754-43EB-81CE-F18DF0543D99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data", "data\data.csproj", "{D27DA9F6-C356-4F0D-8F98-D363954BACB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api", "api\api.csproj", "{D88EC7AC-781A-41AA-B520-08F689AF3D82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyatendanceApi", "CompanyatendanceApi\CompanyatendanceApi.csproj", "{D88EC7AC-781A-41AA-B520-08F689AF3D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "common\common.csproj", "{11904567-558B-4079-8D70-C273EC7C8580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{D88EC7AC-781A-41AA-B520-08F689AF3D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D88EC7AC-781A-41AA-B520-08F689AF3D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D88EC7AC-781A-41AA-B520-08F689AF3D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11904567-558B-4079-8D70-C273EC7C8580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11904567-558B-4079-8D70-C273EC7C8580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11904567-558B-4079-8D70-C273EC7C8580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11904567-558B-4079-8D70-C273EC7C8580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

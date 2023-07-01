@@ -8,10 +8,12 @@
     ".NETCoreApp,Version=v7.0": {
       "data/1.0.0": {
         "dependencies": {
-          "BaseEntity": "1.0.0",
+          "Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.4.23259.3",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.0-preview.5.23280.1",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.0-preview.4.23259.3",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3",
+          "common": "1.0.0"
         },
         "runtime": {
           "data.dll": {}
@@ -123,7 +125,7 @@
       },
       "Microsoft.EntityFrameworkCore/8.0.0-preview.4.23259.3": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.0-preview.4.23259.3",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.0-preview.5.23280.1",
           "Microsoft.EntityFrameworkCore.Analyzers": "8.0.0-preview.4.23259.3",
           "Microsoft.Extensions.Caching.Memory": "8.0.0-preview.4.23259.5",
           "Microsoft.Extensions.DependencyInjection": "8.0.0-preview.4.23259.5",
@@ -136,11 +138,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/8.0.0-preview.4.23259.3": {
+      "Microsoft.EntityFrameworkCore.Abstractions/8.0.0-preview.5.23280.1": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.25903"
+            "fileVersion": "8.0.23.28001"
           }
         }
       },
@@ -553,9 +555,18 @@
           }
         }
       },
-      "BaseEntity/1.0.0": {
+      "common/1.0.0": {
+        "dependencies": {
+          "Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0-preview.4.23259.3"
+        },
         "runtime": {
-          "BaseEntity.dll": {}
+          "common.dll": {}
+        }
+      },
+      "Entity/1.0.0": {
+        "runtime": {
+          "Entity.dll": {}
         }
       }
     }
@@ -615,12 +626,12 @@
       "path": "microsoft.entityframeworkcore/8.0.0-preview.4.23259.3",
       "hashPath": "microsoft.entityframeworkcore.8.0.0-preview.4.23259.3.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/8.0.0-preview.4.23259.3": {
+    "Microsoft.EntityFrameworkCore.Abstractions/8.0.0-preview.5.23280.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2OjediOPtutzOTkkyirILuJXJrm7QpEw/4kOu+lPXEfTchYD51jYXLi3ZvgMdMSl3TsN9lKb3xgeuJcgUK0KOQ==",
-      "path": "microsoft.entityframeworkcore.abstractions/8.0.0-preview.4.23259.3",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.8.0.0-preview.4.23259.3.nupkg.sha512"
+      "sha512": "sha512-HwZP98QeO6KghID7ijGEPvfFW0EygHI318JtlO9X63+8rDwiHkEA03Zcf1rFJN6Mla0ueqTsOyRnJDp8lF3ACg==",
+      "path": "microsoft.entityframeworkcore.abstractions/8.0.0-preview.5.23280.1",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.8.0.0-preview.5.23280.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Analyzers/8.0.0-preview.4.23259.3": {
       "type": "package",
@@ -944,7 +955,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "BaseEntity/1.0.0": {
+    "common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

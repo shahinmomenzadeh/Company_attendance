@@ -1,6 +1,6 @@
-﻿using Entity1;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using model;
+using System.Reflection;
 
 namespace data
 {
@@ -12,10 +12,17 @@ namespace data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>();
-            modelBuilder.Entity<Attendance>();
-
             base.OnModelCreating(modelBuilder);
+
+            // Get all types that implement IBaseEntity interface
+            var entityTypes = Assembly.GetAssembly(typeof(IBaseEntity)).GetTypes()
+                .Where(t => t.IsClass && !t.IsAbstract && typeof(IBaseEntity).IsAssignableFrom(t));
+
+            // Iterate over each entity type and add it to the model
+            foreach (var entityType in entityTypes)
+            {
+                modelBuilder.Entity(entityType);
+            }
         }
     }
 }
