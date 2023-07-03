@@ -1,0 +1,15 @@
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.csproj.AssemblyReference.cache
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.AssemblyInfoInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.AssemblyInfo.cs
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.csproj.CoreCompileInputs.cache
+C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.deps.json
+C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.dll
+C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.pdb
+C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\Entity.dll
+C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\Entity.pdb
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.csproj.CopyComplete
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.dll
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\refint\common.dll
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.pdb
+C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\ref\common.dll
