@@ -4,126 +4,6 @@
     "C:\\Users\\shahin\\RiderProjects\\Company attendance\\CompanyatendanceApi\\CompanyatendanceApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\ClassLibrary1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\ClassLibrary1.csproj",
-        "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\ClassLibrary1.csproj",
-        "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\ClassLibrary.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\ClassLibrary.csproj",
-        "projectName": "ClassLibrary",
-        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\ClassLibrary.csproj",
-        "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "C:\\Users\\shahin\\RiderProjects\\Company attendance\\common\\common.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -209,17 +89,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary1\\ClassLibrary1.csproj"
-              },
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\ClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\ClassLibrary\\ClassLibrary.csproj"
-              },
               "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj": {
                 "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj"
               },
-              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\Service.csproj"
+              "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj": {
+                "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj"
               }
             }
           }
@@ -425,14 +299,14 @@
         }
       }
     },
-    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\Service.csproj": {
+    "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\Service.csproj",
-        "projectName": "Service",
-        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj",
+        "projectName": "SERVICE",
+        "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj",
         "packagesPath": "C:\\Users\\shahin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\Service\\obj\\",
+        "outputPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shahin\\AppData\\Roaming\\NuGet\\NuGet.Config"

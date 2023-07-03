@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using model;
+﻿using data;
+using Microsoft.EntityFrameworkCore;
 
-namespace data.Repository;
+namespace BaseRepository;
 
 public class BaseRepository<TEntity> :IBaseRepository<TEntity> where TEntity : class
 {
