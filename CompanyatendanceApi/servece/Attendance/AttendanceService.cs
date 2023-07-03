@@ -1,7 +1,11 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using api.DTO.DTO1;
+using api.DTO.DTO2;
+using AutoMapper;
 using BaseRepository;
 using model;
-using api.DTO.DTO1;
 
 namespace Services
 {
@@ -9,6 +13,7 @@ namespace Services
     {
         private readonly IBaseRepository<Attendance> _attendanceRepository;
         private readonly IMapper _mapper;
+        private IAttendanceService _attendanceServiceImplementation;
 
         public AttendanceService(IBaseRepository<Attendance> attendanceRepository, IMapper mapper)
         {
@@ -34,14 +39,14 @@ namespace Services
             return attendanceDto;
         }
 
-        public async Task<AttendanceDto> AddAttendance(AttendanceDto attendanceDto)
+        public async Task<AttendanceDto> AddAttendance(Attendance attendanceDto)
         {
             var attendance = _mapper.Map<Attendance>(attendanceDto);
             await _attendanceRepository.Add(attendance);
             return _mapper.Map<AttendanceDto>(attendance);
         }
 
-        public async Task UpdateAttendance(int id, AttendanceDto attendanceDto)
+        public async Task UpdateAttendance(int id, Attendance attendanceDto)
         {
             var existingAttendance = await _attendanceRepository.GetById(id);
             if (existingAttendance == null)
@@ -60,6 +65,13 @@ namespace Services
                 throw new Exception("Attendance not found.");
             }
             await _attendanceRepository.Delete(id);
+        }
+
+        public async Task<List<AttendanceDto>> GetAllAttendancesWithAttendance()
+        {
+            var attendances = await _attendanceRepository.GetAllWithAttendance();
+            var attendanceDtos = _mapper.Map<List<AttendanceDto>>(attendances);
+            return attendanceDtos;
         }
     }
 }

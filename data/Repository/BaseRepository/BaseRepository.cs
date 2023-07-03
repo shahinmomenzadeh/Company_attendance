@@ -1,12 +1,13 @@
-﻿using data;
+﻿using System.Linq.Expressions;
+using data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BaseRepository;
 
-public class BaseRepository<TEntity> :IBaseRepository<TEntity> where TEntity : class
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
 {
     private readonly ApplicationDbContext _context;
-    public  DbSet<TEntity> dbset;
+    public DbSet<TEntity> dbset;
 
     public BaseRepository(ApplicationDbContext context)
     {
@@ -14,41 +15,56 @@ public class BaseRepository<TEntity> :IBaseRepository<TEntity> where TEntity : c
         dbset = context.Set<TEntity>();
     }
 
-    public Task<List<TEntity>> GetAll()
+    public virtual async Task<List<TEntity>> GetAll()
     {
-        return dbset.ToListAsync();
+        return await dbset.ToListAsync();
     }
 
-    public async Task<TEntity> GetById(int id)
+    public virtual async Task<TEntity> GetById(int id)
     {
         return await dbset.FindAsync(id);
     }
 
-    public async Task<int> Add(TEntity entity)
+    public virtual async Task<int> Add(TEntity entity)
     {
         await dbset.AddAsync(entity);
         return await _context.SaveChangesAsync();
     }
 
-    public async Task<int> Update(TEntity entity)
+    public virtual async Task<int> Update(TEntity entity)
     {
-         dbset.Update(entity);
+        dbset.Update(entity);
         return await _context.SaveChangesAsync();
     }
 
-    public async Task<int> Delete(int id)
+    public virtual async Task<int> Delete(int id)
     {
         var entity = await dbset.FindAsync(id);
         dbset.Remove(entity);
         return await _context.SaveChangesAsync();
     }
+
+    public virtual async Task<List<TEntity>> GetAllWithAttendance()
+    {
+        return await dbset.Include("Attendances").ToListAsync();
+    }
+
+    
+
+    public async Task<List<TEntity>> GetAllWithInclude()
+    {
+        string includeExpression = null;
+        return await dbset.Include(includeExpression).ToListAsync();
+    }
 }
 
-public interface IBaseRepository<T> where T :  class
+public interface IBaseRepository<T> where T : class
 {
     Task<List<T>> GetAll();
     Task<T> GetById(int id);
     Task<int> Add(T entity);
     Task<int> Update(T entity);
     Task<int> Delete(int id);
+    Task<List<T>> GetAllWithAttendance();
+    Task<List<T>> GetAllWithInclude();
 }

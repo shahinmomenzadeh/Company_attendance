@@ -1,64 +1,73 @@
-﻿using api.DTO;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using api.DTO.DTO2;
 using AutoMapper;
 using BaseRepository;
-using Entity1;
+using Microsoft.AspNetCore.Mvc;
+using model;
 
-
-public class EmployeeService : IEmployeeService
+namespace Services
 {
-    private readonly IBaseRepository<Employee> _employeeRepository;
-    private readonly IMapper _mapper;
-
-    public EmployeeService(IBaseRepository<Employee> employeeRepository, IMapper mapper)
+    public class EmployeeService : IEmployeeService
     {
-        _employeeRepository = employeeRepository;
-        _mapper = mapper;
-    }
+        private readonly IBaseRepository<Employee> _employeeRepository;
+        private readonly IMapper _mapper;
+        private IEmployeeService _employeeServiceImplementation;
 
-    public async Task<List<EmployeeDto>> GetAllEmployee()
-    {
-        var employee = await _employeeRepository.GetAll();
-        var employeeDtos = _mapper.Map<List<EmployeeDto>>(employee);
-        return employeeDtos;
-    }
-
-    public async Task<EmployeeDto> GetEmployeeById(int id)
-    {
-        var employee = await _employeeRepository.GetById(id);
-        if (employee == null)
+        public EmployeeService(IBaseRepository<Employee> employeeRepository, IMapper mapper)
         {
-            return null;
+            _employeeRepository = employeeRepository;
+            _mapper = mapper;
         }
-        var employeeDto = _mapper.Map<EmployeeDto>(employee);
-        return employeeDto;
-    }
 
-    public async Task<EmployeeDto> AddEmployee(EmployeeDto employeeDto)
-    {
-        var employee = _mapper.Map<Employee>(employeeDto);
-        await _employeeRepository.Add(employee);
-        return _mapper.Map<EmployeeDto>(employee);
-    }
-
-    public async Task UpdateEmployee(int id, EmployeeDto employeeDto)
-    {
-        var existingEmployee = await _employeeRepository.GetById(id);
-        if (existingEmployee == null)
+        public async Task<List<EmployeeDto>> GetAllEmployees()
         {
-            throw new Exception("Employee not found.");
+            var employees = await _employeeRepository.GetAll();
+            var employeeDtos = _mapper.Map<List<EmployeeDto>>(employees);
+            return employeeDtos;
         }
-        _mapper.Map(employeeDto, existingEmployee);
-        await _employeeRepository.Update(existingEmployee);
-    }
 
-    public async Task DeleteEmployee(int id)
-    {
-        var existingEmployee = await _employeeRepository.GetById(id);
-        if (existingEmployee == null)
+        public async Task<EmployeeDto> GetEmployeeById(int id)
         {
-            throw new Exception("Employee not found.");
+            var employee = await _employeeRepository.GetById(id);
+            if (employee == null)
+            {
+                return null;
+            }
+            var employeeDto = _mapper.Map<EmployeeDto>(employee);
+            return employeeDto;
         }
-        await _employeeRepository.Delete(id);
+
+        public async Task<EmployeeDto> AddEmployee(EmployeeDto employeeDto)
+        {
+            var employee = _mapper.Map<Employee>(employeeDto);
+            await _employeeRepository.Add(employee);
+            return _mapper.Map<EmployeeDto>(employee);
+        }
+
+        public async Task UpdateEmployee(int id, EmployeeDto employeeDto)
+        {
+            var existingEmployee = await _employeeRepository.GetById(id);
+            if (existingEmployee == null)
+            {
+                throw new Exception("Employee not found.");
+            }
+            _mapper.Map(employeeDto, existingEmployee);
+            await _employeeRepository.Update(existingEmployee);
+        }
+
+        public async Task DeleteEmployee(int id)
+        {
+            var existingEmployee = await _employeeRepository.GetById(id);
+            if (existingEmployee == null)
+            {
+                throw new Exception("Employee not found.");
+            }
+            await _employeeRepository.Delete(id);
+        }
+
+       
+        
     }
 }

@@ -1,7 +1,6 @@
 using api.DTO.DTO1;
 using api.DTO.DTO2;
-using Entity1;
-using model;
+
 
 
 namespace AutoMapper

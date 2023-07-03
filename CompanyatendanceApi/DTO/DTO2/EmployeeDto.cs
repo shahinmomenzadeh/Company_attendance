@@ -1,9 +1,14 @@
-﻿namespace api.DTO.DTO2;
+﻿using api.DTO.DTO1;
 
-public class EmployeeDto: BaseDto
+namespace api.DTO.DTO2
 {
-    public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public decimal Salary { get; set; }
+    public class EmployeeDto : BaseDto
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        
+
+        public ICollection<AttendanceDto> Attendances { get; set; }
+    }
 }

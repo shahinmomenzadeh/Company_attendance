@@ -1,9 +1,8 @@
 using System.Reflection;
 using BaseRepository;
 using data;
-using Entity1;
 using Microsoft.EntityFrameworkCore;
-using model;
+
 using AutoMapper;
 using Services;
 

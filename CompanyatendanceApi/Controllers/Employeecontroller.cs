@@ -4,77 +4,58 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace api.Controllers;
-
-[ApiController]
-[Route("CompanyatendanceApi/[controller]")]
-public class EmployeeController : ControllerBase
+namespace api.Controllers
 {
-    private readonly IEmployeeService _employeeService;
-    private readonly IMapper _mapper;
-
-    public EmployeeController(IEmployeeService employeeService, IMapper mapper)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class EmployeeController : ControllerBase
     {
-        _employeeService = employeeService;
-        _mapper = mapper;
-    }
+        private readonly IEmployeeService _employeeService;
 
-    [HttpGet]
-    public async Task<ActionResult<List<EmployeeDto>>> GetAllEmployee()
-    {
-        var employee = await _employeeService.GetAllEmployee();
-        var employeeDtos = _mapper.Map<List<EmployeeDto>>(employee);
-        return Ok(employeeDtos);
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int id)
-    {
-        var employee = await _employeeService.GetEmployeeById(id);
-        if (employee == null)
+        public EmployeeController(IEmployeeService employeeService)
         {
-            return NotFound();
+            _employeeService = employeeService;
         }
-        var employeeDtos = _mapper.Map<EmployeeDto>(employee);
-        return Ok(employeeDtos);
-    }
 
-    [HttpPost]
-    public async Task<ActionResult<EmployeeDto>> AddEmployee(EmployeeDto employeeDto)
-    {
-        var employee = await _employeeService.AddEmployee(employeeDto);
-        var employeeDtos = _mapper.Map<EmployeeDto>(employee);
-        return Ok(employeeDtos);
-    }
+        [HttpGet]
+        public async Task<ActionResult<List<EmployeeDto>>> GetAllEmployees()
+        {
+            var employees = await _employeeService.GetAllEmployees();
+            return Ok(employees);
+        }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateEmployee(int id,[FromBody] EmployeeDto employeeDto)
-    {
-        try
+        [HttpGet("{id}")]
+        public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int id)
+        {
+            var employee = await _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return Ok(employee);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<EmployeeDto>> AddEmployee(EmployeeDto employeeDto)
+        {
+            var addedEmployee = await _employeeService.AddEmployee(employeeDto);
+            return CreatedAtAction(nameof(GetEmployeeById), new { id = addedEmployee.Id }, addedEmployee);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeDto employeeDto)
         {
             await _employeeService.UpdateEmployee(id, employeeDto);
             return NoContent();
         }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
 
-    [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteEmployee(int id)
-    {
-        try
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(int id)
         {
             await _employeeService.DeleteEmployee(id);
             return NoContent();
         }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
 
-    
         
+    }
 }

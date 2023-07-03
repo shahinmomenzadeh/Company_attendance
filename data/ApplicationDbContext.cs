@@ -23,6 +23,12 @@ namespace data
             {
                 modelBuilder.Entity(entityType);
             }
+
+            // Define the relationship between Employee and Attendance
+            modelBuilder.Entity<Employee>()
+                .HasMany(e => e.Attendances) // An employee can have many attendances
+                .WithOne(a => a.Employee)   // An attendance belongs to one employee
+                .HasForeignKey(a => a.EmployeeId); // The foreign key is EmployeeId
         }
     }
 }
