@@ -10,14 +10,11 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "ClassLibrary": "1.0.0",
-          "ClassLibrary1": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Design": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.4.23259.3",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0-preview.4.23259.3",
-          "Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0",
           "data": "1.0.0"
         },
@@ -747,15 +744,6 @@
         "runtime": {
           "Entity.dll": {}
         }
-      },
-      "Service/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "12.0.1",
-          "data": "1.0.0"
-        },
-        "runtime": {
-          "Service.dll": {}
-        }
       }
     }
   },
@@ -1259,11 +1247,6 @@
       "sha512": ""
     },
     "Entity/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

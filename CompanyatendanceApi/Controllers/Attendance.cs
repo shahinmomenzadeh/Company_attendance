@@ -1,6 +1,9 @@
-﻿using model;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using api.DTO.DTO1;
+
 
 namespace api.Controllers
 {
@@ -9,56 +12,40 @@ namespace api.Controllers
     public class AttendanceController : ControllerBase
     {
         private readonly IAttendanceService _attendanceService;
+        private readonly IMapper _mapper;
 
-        public AttendanceController(IAttendanceService attendanceService)
+        public AttendanceController(IAttendanceService attendanceService, IMapper mapper)
         {
             _attendanceService = attendanceService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AttendanceSelectDto>>> GetAllAttendances()
+        public async Task<ActionResult<List<AttendanceDto>>> GetAllAttendances()
         {
             var attendances = await _attendanceService.GetAllAttendances();
-            var attendanceSelectDtos = attendances.Select(a => new AttendanceSelectDto
-            {
-                Id = a.Id,
-                EmployeeId = a.EmployeeId,
-                EntryTime = a.EntryTime,
-                ExitTime = a.ExitTime
-            }).ToList();
-            return Ok(attendanceSelectDtos);
+            var attendanceDtos = _mapper.Map<List<AttendanceDto>>(attendances);
+            return Ok(attendanceDtos);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AttendanceSelectDto>> GetAttendanceById(int id)
+        public async Task<ActionResult<AttendanceDto>> GetAttendanceById(int id)
         {
             var attendance = await _attendanceService.GetAttendanceById(id);
             if (attendance == null)
             {
                 return NotFound();
             }
-            var attendanceSelectDto = new AttendanceSelectDto
-            {
-                Id = attendance.Id,
-                EmployeeId = attendance.EmployeeId,
-                EntryTime = attendance.EntryTime,
-                ExitTime = attendance.ExitTime
-            };
-            return Ok(attendanceSelectDto);
+            var attendanceDto = _mapper.Map<AttendanceDto>(attendance);
+            return Ok(attendanceDto);
         }
 
         [HttpPost]
-        public async Task<ActionResult<AttendanceSelectDto>> AddAttendance([FromBody] AttendanceDto attendanceDto)
+        public async Task<ActionResult<AttendanceDto>> AddAttendance( AttendanceDto attendanceDto)
         {
             var attendance = await _attendanceService.AddAttendance(attendanceDto);
-            var attendanceSelectDto = new AttendanceSelectDto
-            {
-                Id = attendance.Id,
-                EmployeeId = attendance.EmployeeId,
-                EntryTime = attendance.EntryTime,
-                ExitTime = attendance.ExitTime
-            };
-            return Ok(attendanceSelectDto);
+            attendanceDto = _mapper.Map<AttendanceDto>(attendance);
+            return Ok(attendanceDto);
         }
 
         [HttpPut("{id}")]

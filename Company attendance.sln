@@ -8,10 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyatendanceApi", "Comp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "common\common.csproj", "{11904567-558B-4079-8D70-C273EC7C8580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automaper", "Automaper\Automaper.csproj", "{35928ED6-A04E-4CC5-8AB9-2B05B7CCB64A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERVICE", "SERVICE\SERVICE.csproj", "{7CEFF45D-B808-4267-9AA5-CE73D85499F5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,13 +30,5 @@ Global
 		{11904567-558B-4079-8D70-C273EC7C8580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11904567-558B-4079-8D70-C273EC7C8580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11904567-558B-4079-8D70-C273EC7C8580}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35928ED6-A04E-4CC5-8AB9-2B05B7CCB64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35928ED6-A04E-4CC5-8AB9-2B05B7CCB64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35928ED6-A04E-4CC5-8AB9-2B05B7CCB64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35928ED6-A04E-4CC5-8AB9-2B05B7CCB64A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CEFF45D-B808-4267-9AA5-CE73D85499F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CEFF45D-B808-4267-9AA5-CE73D85499F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CEFF45D-B808-4267-9AA5-CE73D85499F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CEFF45D-B808-4267-9AA5-CE73D85499F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

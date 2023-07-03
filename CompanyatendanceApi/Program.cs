@@ -7,13 +7,14 @@ using model;
 using AutoMapper;
 using Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-//builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

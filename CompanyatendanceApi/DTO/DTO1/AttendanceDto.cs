@@ -1,4 +1,5 @@
-﻿namespace api.DTO.DTO1;
+﻿using AutoMapper;
+namespace api.DTO.DTO1;
 
 public class AttendanceDto: BaseDto
 {

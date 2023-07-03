@@ -1,5 +1,6 @@
 ﻿using api.DTO;
 using api.DTO.DTO2;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -10,17 +11,20 @@ namespace api.Controllers;
 public class EmployeeController : ControllerBase
 {
     private readonly IEmployeeService _employeeService;
+    private readonly IMapper _mapper;
 
-    public EmployeeController(IEmployeeService employeeService)
+    public EmployeeController(IEmployeeService employeeService, IMapper mapper)
     {
         _employeeService = employeeService;
+        _mapper = mapper;
     }
 
     [HttpGet]
     public async Task<ActionResult<List<EmployeeDto>>> GetAllEmployee()
     {
         var employee = await _employeeService.GetAllEmployee();
-        return Ok(employee);
+        var employeeDtos = _mapper.Map<List<EmployeeDto>>(employee);
+        return Ok(employeeDtos);
     }
 
     [HttpGet("{id}")]
@@ -31,18 +35,20 @@ public class EmployeeController : ControllerBase
         {
             return NotFound();
         }
-        return Ok(employee);
+        var employeeDtos = _mapper.Map<EmployeeDto>(employee);
+        return Ok(employeeDtos);
     }
 
     [HttpPost]
     public async Task<ActionResult<EmployeeDto>> AddEmployee(EmployeeDto employeeDto)
     {
         var employee = await _employeeService.AddEmployee(employeeDto);
-        return Ok(employee);
+        var employeeDtos = _mapper.Map<EmployeeDto>(employee);
+        return Ok(employeeDtos);
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult> UpdateEmployee(int id, EmployeeDto employeeDto)
+    public async Task<ActionResult> UpdateEmployee(int id,[FromBody] EmployeeDto employeeDto)
     {
         try
         {

@@ -2,7 +2,7 @@ using api.DTO.DTO1;
 using api.DTO.DTO2;
 using Entity1;
 using model;
-using Services;
+
 
 namespace AutoMapper
 {
@@ -13,6 +13,7 @@ namespace AutoMapper
             CreateMap<Employee, EmployeeDto>();
             CreateMap<EmployeeDto, Employee>();
             CreateMap<Attendance, AttendanceDto>();
+            //CreateMap<Attendance, AttendanceSelectDto>();
             CreateMap<AttendanceDto, Attendance>();
         }
     }

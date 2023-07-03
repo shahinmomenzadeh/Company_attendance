@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using BaseRepository;
 using model;
-using api.DTO;
 using api.DTO.DTO1;
 
 namespace Services

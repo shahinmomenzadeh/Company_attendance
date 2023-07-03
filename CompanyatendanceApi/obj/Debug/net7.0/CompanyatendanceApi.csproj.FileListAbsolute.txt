@@ -94,5 +94,3 @@ C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\n
 C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\net7.0\Entity.pdb
 C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\net7.0\Common.dll
 C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\net7.0\Common.pdb
-C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\net7.0\Service.dll
-C:\Users\shahin\RiderProjects\Company attendance\CompanyatendanceApi\bin\Debug\net7.0\Service.pdb

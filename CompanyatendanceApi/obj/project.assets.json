@@ -1230,20 +1230,6 @@
         "runtime": {
           "bin/placeholder/Entity.dll": {}
         }
-      },
-      "SERVICE/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "AutoMapper": "12.0.1",
-          "data": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SERVICE.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SERVICE.dll": {}
-        }
       }
     }
   },
@@ -3479,11 +3465,6 @@
       "type": "project",
       "path": "../Entity/Entity.csproj",
       "msbuildProject": "../Entity/Entity.csproj"
-    },
-    "SERVICE/1.0.0": {
-      "type": "project",
-      "path": "../SERVICE/SERVICE.csproj",
-      "msbuildProject": "../SERVICE/SERVICE.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3495,7 +3476,6 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.4.23259.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.4.23259.3",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.4.23259.3",
-      "SERVICE >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "data >= 1.0.0"
     ]
@@ -3527,9 +3507,6 @@
           "projectReferences": {
             "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj": {
               "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\data\\data.csproj"
-            },
-            "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj": {
-              "projectPath": "C:\\Users\\shahin\\RiderProjects\\Company attendance\\SERVICE\\SERVICE.csproj"
             }
           }
         }
