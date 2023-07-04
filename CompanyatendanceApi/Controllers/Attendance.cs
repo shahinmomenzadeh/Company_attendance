@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using api.DTO.DTO1;
 using api.DTO.DTO2;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Controllers
 {
@@ -23,40 +25,65 @@ namespace api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<AttendanceDto>>> GetAllAttendances()
         {
-            var attendances = await _attendanceService.GetAllAttendancesWithAttendance();
-            var attendanceDtos = _mapper.Map<List<AttendanceDto>>(attendances);
-            return Ok(attendanceDtos);
+            try
+            {
+                var attendances = await _attendanceService.GetAllAttendances();
+                var attendanceDtos = _mapper.Map<List<AttendanceDto>>(attendances);
+                return Ok(attendanceDtos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<AttendanceDto>> GetAttendanceById(int id)
         {
-            var attendance = await _attendanceService.GetAttendanceById(id);
-            if (attendance == null)
+            try
             {
-                return NotFound();
+                var attendance = await _attendanceService.GetAttendanceById(id);
+                if (attendance == null)
+                {
+                    return NotFound();
+                }
+                var attendanceDto = _mapper.Map<AttendanceDto>(attendance);
+                return Ok(attendanceDto);
             }
-            var attendanceDto = _mapper.Map<AttendanceDto>(attendance);
-            return Ok(attendanceDto);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult<AttendanceDto>> AddAttendance(AttendanceDto2 attendanceDto2)
+        public async Task<ActionResult<AttendanceDto>> AddAttendance(AttendanceDto attendanceDto)
         {
-            var attendance = _mapper.Map<Attendance>(attendanceDto2);
-            await _attendanceService.AddAttendance(attendance);
-            var attendanceDto = _mapper.Map<AttendanceDto>(attendance);
-            return Ok(attendanceDto);
+            try
+            {
+                var attendance = _mapper.Map<Attendance>(attendanceDto);
+                await _attendanceService.AddAttendance(attendance);
+                var attendanceDto2 = _mapper.Map<AttendanceDto>(attendance);
+                return Ok(attendanceDto2);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateAttendance(int id, [FromBody] AttendanceDto2 attendanceDto2)
+        public async Task<ActionResult> UpdateAttendance(int id, [FromBody] AttendanceDto attendanceDto)
         {
-            var attendance = _mapper.Map<Attendance>(attendanceDto2);
             try
             {
+                var attendance = _mapper.Map<Attendance>(attendanceDto);
                 await _attendanceService.UpdateAttendance(id, attendance);
                 return NoContent();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
             }
             catch (Exception ex)
             {
@@ -71,6 +98,10 @@ namespace api.Controllers
             {
                 await _attendanceService.DeleteAttendance(id);
                 return NoContent();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
             }
             catch (Exception ex)
             {

@@ -1,6 +1,7 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using model;
+using System;
+using System.Linq;
 
 namespace Common.Extensions
 {

@@ -12,7 +12,8 @@ namespace AutoMapper
             CreateMap<Employee, EmployeeDto>();
             CreateMap<EmployeeDto, Employee>();
             CreateMap<Attendance, AttendanceDto>();
-            //CreateMap<Attendance, AttendanceSelectDto>();
+            CreateMap<Attendance, AttendanceDto2>();
+            CreateMap<AttendanceDto2, Attendance>();
             CreateMap<AttendanceDto, Attendance>();
         }
     }

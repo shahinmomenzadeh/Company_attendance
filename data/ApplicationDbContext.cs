@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using model;
-using System.Reflection;
+using System;
+using Common.Extensions;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace data
 {
@@ -14,21 +16,16 @@ namespace data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Get all types that implement IBaseEntity interface
-            var entityTypes = Assembly.GetAssembly(typeof(IBaseEntity)).GetTypes()
-                .Where(t => t.IsClass && !t.IsAbstract && typeof(IBaseEntity).IsAssignableFrom(t));
-
-            // Iterate over each entity type and add it to the model
-            foreach (var entityType in entityTypes)
-            {
-                modelBuilder.Entity(entityType);
-            }
-
-            // Define the relationship between Employee and Attendance
+            modelBuilder.AddEntitiesFromAssembly(typeof(IBaseEntity));
+    
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Attendances) // An employee can have many attendances
-                .WithOne(a => a.Employee)   // An attendance belongs to one employee
-                .HasForeignKey(a => a.EmployeeId); // The foreign key is EmployeeId
+                .HasMany(e => e.Attendances)
+                .WithOne(a => a.Employee)
+                .HasForeignKey(a => a.EmployeeId);
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.AmbientTransactionWarning));
         }
     }
 }
