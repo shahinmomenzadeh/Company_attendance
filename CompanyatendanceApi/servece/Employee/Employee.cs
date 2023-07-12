@@ -21,29 +21,29 @@ namespace Services
             _mapper = mapper;
         }
 
-        public async Task<List<EmployeeDto>> GetAllEmployees()
+        public async Task<List<EmployeeSelectDto>> GetAllEmployees()
         {
             var employees = await _employeeRepository.GetAll();
-            var employeeDtos = _mapper.Map<List<EmployeeDto>>(employees);
+            var employeeDtos = _mapper.Map<List<EmployeeSelectDto>>(employees);
             return employeeDtos;
         }
 
-        public async Task<EmployeeDto> GetEmployeeById(int id)
+        public async Task<EmployeeSelectDto> GetEmployeeById(int id)
         {
             var employee = await _employeeRepository.GetById(id);
             if (employee == null)
             {
                 return null;
             }
-            var employeeDto = _mapper.Map<EmployeeDto>(employee);
+            var employeeDto = _mapper.Map<EmployeeSelectDto>(employee);
             return employeeDto;
         }
 
-        public async Task<EmployeeDto> AddEmployee(EmployeeDto employeeDto)
+        public async Task<EmployeeSelectDto> AddEmployee(EmployeeDto employeeDto)
         {
             var employee = _mapper.Map<Employee>(employeeDto);
             await _employeeRepository.Add(employee);
-            return _mapper.Map<EmployeeDto>(employee);
+            return _mapper.Map<EmployeeSelectDto>(employee);
         }
 
         public async Task UpdateEmployee(int id, EmployeeDto employeeDto)

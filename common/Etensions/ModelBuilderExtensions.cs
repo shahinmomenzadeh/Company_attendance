@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using model;
 using System;
 using System.Linq;
 
@@ -7,7 +6,7 @@ namespace Common.Extensions
 {
     public static class ModelBuilderExtensions
     {
-        public static void AddEntitiesFromAssembly(this ModelBuilder modelBuilder, Type assemblyType)
+        public static void AddEntitiesFromAssembly<IBaseEntity>(this ModelBuilder modelBuilder, Type assemblyType)
         {
             var entities = assemblyType.Assembly.GetExportedTypes()
                 .Where(p => !p.IsAbstract && p.IsClass && p.IsSubclassOf(typeof(IBaseEntity)) &&

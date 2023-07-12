@@ -16,12 +16,9 @@ namespace data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.AddEntitiesFromAssembly(typeof(IBaseEntity));
-    
-            modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Attendances)
-                .WithOne(a => a.Employee)
-                .HasForeignKey(a => a.EmployeeId);
+            modelBuilder.AddEntitiesFromAssembly<IBaseEntity>(typeof(IBaseEntity));
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(IBaseEntity).Assembly);
+          
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

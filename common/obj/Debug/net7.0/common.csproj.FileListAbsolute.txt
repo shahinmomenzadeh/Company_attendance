@@ -6,9 +6,6 @@ C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.
 C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.deps.json
 C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.dll
 C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\common.pdb
-C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\Entity.dll
-C:\Users\shahin\RiderProjects\Company attendance\common\bin\Debug\net7.0\Entity.pdb
-C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.csproj.CopyComplete
 C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.dll
 C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\refint\common.dll
 C:\Users\shahin\RiderProjects\Company attendance\common\obj\Debug\net7.0\common.pdb

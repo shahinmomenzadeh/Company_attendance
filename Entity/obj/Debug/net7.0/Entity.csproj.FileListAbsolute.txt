@@ -10,3 +10,6 @@ C:\Users\shahin\RiderProjects\Company attendance\Entity\obj\Debug\net7.0\Entity.
 C:\Users\shahin\RiderProjects\Company attendance\Entity\obj\Debug\net7.0\refint\Entity.dll
 C:\Users\shahin\RiderProjects\Company attendance\Entity\obj\Debug\net7.0\Entity.pdb
 C:\Users\shahin\RiderProjects\Company attendance\Entity\obj\Debug\net7.0\ref\Entity.dll
+C:\Users\shahin\RiderProjects\Company attendance\Entity\bin\Debug\net7.0\common.dll
+C:\Users\shahin\RiderProjects\Company attendance\Entity\bin\Debug\net7.0\common.pdb
+C:\Users\shahin\RiderProjects\Company attendance\Entity\obj\Debug\net7.0\Entity.csproj.CopyComplete

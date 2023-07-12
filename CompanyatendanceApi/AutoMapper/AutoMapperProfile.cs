@@ -9,12 +9,10 @@ namespace AutoMapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<Employee, EmployeeDto>();
-            CreateMap<EmployeeDto, Employee>();
-            CreateMap<Attendance, AttendanceDto>();
-            CreateMap<Attendance, AttendanceDto2>();
-            CreateMap<AttendanceDto2, Attendance>();
-            CreateMap<AttendanceDto, Attendance>();
+            CreateMap<Employee, EmployeeDto>().ReverseMap();
+            CreateMap<Employee, EmployeeSelectDto>().ReverseMap();
+            CreateMap<Attendance, AttendanceDto>().ReverseMap();
+            CreateMap<Attendance, AttendanceSelectDto>().ReverseMap();
         }
     }
 }

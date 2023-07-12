@@ -23,7 +23,7 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<AttendanceDto>>> GetAllAttendances()
+        public async Task<ActionResult<List<AttendanceSelectDto>>> GetAllAttendances()
         {
             try
             {
@@ -38,7 +38,7 @@ namespace api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AttendanceDto>> GetAttendanceById(int id)
+        public async Task<ActionResult<AttendanceSelectDto>> GetAttendanceById(int id)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<AttendanceDto>> AddAttendance(AttendanceDto attendanceDto)
+        public async Task<ActionResult<AttendanceSelectDto>> AddAttendance(AttendanceDto attendanceDto)
         {
             try
             {

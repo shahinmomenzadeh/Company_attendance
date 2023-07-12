@@ -24,12 +24,16 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\data\data.csproj" />
-    </ItemGroup>
+
 
     <ItemGroup>
       <Folder Include="servece" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\data\data.csproj" />
     </ItemGroup>
 
 </Project>

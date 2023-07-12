@@ -5,9 +5,9 @@ using api.DTO.DTO2;
 
 public interface IEmployeeService
 {
-    Task<List<EmployeeDto>> GetAllEmployees();
-    Task<EmployeeDto> GetEmployeeById(int id);
-    Task<EmployeeDto> AddEmployee(EmployeeDto employeeDto);
+    Task<List<EmployeeSelectDto>> GetAllEmployees();
+    Task<EmployeeSelectDto> GetEmployeeById(int id);
+    Task<EmployeeSelectDto> AddEmployee(EmployeeDto employeeDto);
     Task UpdateEmployee(int id, EmployeeDto employeeDto);
     Task DeleteEmployee(int id);
     

@@ -7,8 +7,6 @@ namespace api.DTO.DTO2
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
 
-        public ICollection<AttendanceDto> Attendances { get; set; }
     }
 }

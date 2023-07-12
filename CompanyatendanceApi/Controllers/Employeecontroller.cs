@@ -18,14 +18,14 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<EmployeeDto>>> GetAllEmployees()
+        public async Task<ActionResult<List<EmployeeSelectDto>>> GetAllEmployees()
         {
             var employees = await _employeeService.GetAllEmployees();
             return Ok(employees);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<EmployeeDto>> GetEmployeeById(int id)
+        public async Task<ActionResult<EmployeeSelectDto>> GetEmployeeById(int id)
         {
             var employee = await _employeeService.GetEmployeeById(id);
             if (employee == null)
@@ -36,7 +36,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<EmployeeDto>> AddEmployee(EmployeeDto employeeDto)
+        public async Task<ActionResult<EmployeeSelectDto>> AddEmployee(EmployeeDto employeeDto)
         {
             var addedEmployee = await _employeeService.AddEmployee(employeeDto);
             return CreatedAtAction(nameof(GetEmployeeById), new { id = addedEmployee.Id }, addedEmployee);
