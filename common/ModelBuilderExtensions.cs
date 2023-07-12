@@ -16,6 +16,7 @@ namespace Common.Extensions
             {
                 modelBuilder.Entity(entity);
             }
+            //
         }
     }
 }
